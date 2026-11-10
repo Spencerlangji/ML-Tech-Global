@@ -1,0 +1,1626 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ML Tech Global | Changing the World Through Tech</title>
+
+<meta name="description" content="ML Tech Global provides reliable technology, IT support, networking, software development and security solutions.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   GLOBAL DESIGN
+========================= */
+
+:root {
+    --black: #070707;
+    --panel: #12110e;
+    --gold: #d6ad55;
+    --light: #f4d58a;
+    --white: #f7f4ed;
+    --muted: #b8b2a5;
+    --line: rgba(214,173,85,.25);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', Arial, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrap {
+    width: min(1160px, calc(100% - 40px));
+    margin: auto;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    line-height: 1.25;
+}
+
+h1 em, h2 em {
+    color: var(--light);
+    font-style: normal;
+}
+
+h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(30px, 4vw, 45px);
+}
+
+h3 {
+    font-size: 17px;
+}
+
+.section {
+    padding: 85px 0;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.lead {
+    color: #e8d8b5;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.center {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(9,9,9,.97);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+}
+
+.nav {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand img {
+    width: 230px;
+    height: 70px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 13px;
+    color: #ddd6c8;
+}
+
+.links a:hover,
+.links a.active {
+    color: var(--light);
+}
+
+.navbtn {
+    border: 1px solid var(--gold);
+    padding: 9px 17px;
+    border-radius: 4px;
+}
+
+.menu {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 24px;
+    padding: 4px 11px;
+    cursor: pointer;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 23px;
+    min-height: 47px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.gold {
+    background: linear-gradient(135deg, var(--light), #bd8d35);
+    color: #17120a;
+}
+
+.gold:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+.outline {
+    border-color: var(--gold);
+    color: var(--light);
+}
+
+.outline:hover {
+    background: rgba(214,173,85,.12);
+}
+
+/* =========================
+   HOME SECTION
+========================= */
+
+.hero {
+    padding: 85px 0;
+    background:
+        radial-gradient(ellipse at 85% 20%, #9c76251c, transparent 40%),
+        linear-gradient(130deg, #080808, #141109 60%, #070707);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content .muted {
+    max-width: 550px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin: 28px 0 22px;
+}
+
+.ticks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
+    color: #c9c1b2;
+    font-size: 12px;
+}
+
+.hero-image {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    box-shadow: 0 20px 60px #0009;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-image span {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: #080808e8;
+    border-left: 3px solid var(--gold);
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+/* SERVICES STRIP */
+
+.strip {
+    background: #12100b;
+    border-block: 1px solid var(--line);
+    padding: 16px 10px;
+    text-align: center;
+    color: #d4c8ad;
+    font: 700 11px Montserrat, sans-serif;
+    letter-spacing: 2px;
+}
+
+.strip b {
+    color: var(--gold);
+    padding: 0 12px;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.info-panel {
+    background: #11100d;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px;
+}
+
+.info-panel h3 {
+    color: var(--light);
+    margin-bottom: 10px;
+}
+
+/* =========================
+   SERVICES SECTION
+========================= */
+
+.services-section {
+    background: #0f0f0e;
+    border-block: 1px solid #282116;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    overflow: hidden;
+    background: #11100d;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    transition: .35s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(214,173,85,.16);
+}
+
+.service-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #18150e;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .5s;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.08);
+    filter: brightness(.65);
+}
+
+.service-image span {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 13px;
+    background: var(--gold);
+    color: #070707;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0;
+    transition: .3s;
+}
+
+.service-card:hover .service-image span {
+    opacity: 1;
+}
+
+.service-content {
+    padding: 22px;
+}
+
+.service-content h3 {
+    color: var(--light);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.service-content p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 17px;
+}
+
+.service-link,
+.textlink {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.why-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 70px;
+}
+
+.benefits {
+    border-top: 1px solid var(--line);
+}
+
+.benefits > div {
+    display: flex;
+    gap: 24px;
+    padding: 19px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.benefits b {
+    font: 700 17px Montserrat;
+    color: var(--gold);
+}
+
+.benefits h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.benefits p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+    align-items: start;
+}
+
+.details {
+    display: grid;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.details a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.details a > b {
+    display: grid;
+    place-items: center;
+    width: 41px;
+    height: 41px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--light);
+    font-size: 18px;
+}
+
+.details small {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+form {
+    background: #12110e;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px;
+}
+
+form h3 {
+    font-size: 21px;
+    margin-bottom: 17px;
+}
+
+label {
+    display: block;
+    color: #ddcda9;
+    font-size: 12px;
+    margin: 13px 0 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    background: #080808;
+    border: 1px solid #393126;
+    border-radius: 4px;
+    color: var(--white);
+    font: 14px 'DM Sans', sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 0;
+    border-color: var(--gold);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit {
+    width: 100%;
+    margin-top: 17px;
+}
+
+.note {
+    text-align: center;
+    color: #8e877b;
+    font-size: 11px;
+    margin-top: 9px;
+}
+
+/* =========================
+   CALL TO ACTION
+========================= */
+
+.callout {
+    background: linear-gradient(110deg, #241c0d, #100e09);
+    border-block: 1px solid var(--line);
+    padding: 40px 0;
+}
+
+.callinner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.callinner .eyebrow {
+    margin-bottom: 8px;
+}
+
+.callinner h2 {
+    font-size: clamp(25px, 3vw, 35px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #050505;
+    border-top: 1px solid var(--line);
+    padding: 32px 0 15px;
+}
+
+.foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 25px;
+}
+
+.foot p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 360px;
+}
+
+.foot > a:last-child {
+    color: var(--light);
+    font-size: 13px;
+}
+
+.copyright {
+    border-top: 1px solid #292319;
+    padding-top: 14px;
+    color: #817b70;
+    font-size: 11px;
+}
+
+/* =========================
+   IMAGE PREVIEW MODAL
+========================= */
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: #000f;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 35px;
+}
+
+.image-modal.active {
+    display: flex;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 78vh;
+    object-fit: contain;
+    border: 2px solid var(--gold);
+    border-radius: 7px;
+}
+
+.image-modal p {
+    color: var(--light);
+    margin-top: 18px;
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--gold);
+    background: none;
+    border: 0;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero-grid,
+    .about-grid,
+    .why-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-image {
+        max-width: 650px;
+        justify-self: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .nav {
+        min-height: 70px;
+    }
+
+    .brand img {
+        width: 185px;
+        height: 58px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #090909;
+        padding: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .links.open {
+        display: flex;
+    }
+
+    .navbtn {
+        text-align: center;
+    }
+
+    .hero {
+        padding: 55px 0;
+    }
+
+    h1 {
+        font-size: 41px;
+    }
+
+    .lead {
+        font-size: 17px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .strip {
+        font-size: 9px;
+        line-height: 2.5;
+    }
+
+    .strip b {
+        padding: 0 5px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .cards,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-image {
+        height: 230px;
+    }
+
+    .callinner,
+    .foot {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    form {
+        padding: 22px 17px;
+    }
+
+    .image-modal {
+        padding: 15px;
+    }
+
+    .image-modal img {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        height: 350px;
+    }
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+<nav class="nav wrap">
+
+    <a class="brand" href="#home">
+        <img src="assets/ml-tech-global-logo.jpeg" alt="ML Tech Global Logo">
+    </a>
+
+    <button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <div class="links">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT US</a>
+        <a href="#services">SERVICES</a>
+        <a href="#why-us">WHY CHOOSE US</a>
+        <a class="navbtn" href="#contact">CONTACT</a>
+    </div>
+
+</nav>
+</header>
+
+
+<main>
+
+<!-- =========================
+     HOME PAGE
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="wrap hero-grid">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">TECHNOLOGY • SECURITY • INNOVATION</p>
+
+            <h1>
+                Reliable technology.<br>
+                <em>Stronger business.</em>
+            </h1>
+
+            <p class="lead">
+                Reliable tech and security solutions to protect your business and drive growth.
+            </p>
+
+            <p class="muted">
+                From network installation and software development to technical support and digital branding, ML Tech Global helps individuals and businesses work smarter and more securely.
+            </p>
+
+            <div class="actions">
+                <a class="btn gold" href="#services">Explore our services</a>
+                <a class="btn outline" href="#contact">Talk to our team</a>
+            </div>
+
+            <div class="ticks">
+                <span>✓ Practical solutions</span>
+                <span>✓ Reliable support</span>
+                <span>✓ Affordable service</span>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="assets/ml-tech-promo.png" alt="ML Tech Global professional working at her computer">
+            <span>Changing the World Through Tech</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="strip">
+    IT SUPPORT <b>✦</b>
+    NETWORKING <b>✦</b>
+    SOFTWARE <b>✦</b>
+    SECURITY <b>✦</b>
+    DIGITAL SKILLS
+</div>
+
+
+<!-- =========================
+     ABOUT US PAGE
+========================= -->
+
+<section class="section wrap about-grid" id="about">
+
+    <div>
+        <p class="eyebrow">ABOUT ML TECH GLOBAL</p>
+        <h2>Technology that works <em>for you.</em></h2>
+    </div>
+
+    <div>
+        <p class="lead">
+            ML Tech Global provides reliable, affordable, and innovative IT solutions for individuals and businesses.
+        </p>
+
+        <p class="muted">
+            We combine technical knowledge with practical service delivery to help clients solve technology challenges, improve operations, strengthen security and build their digital presence.
+        </p>
+
+        <p class="muted" style="margin-top:15px;">
+            Whether you need a one-time installation, ongoing technical support or a custom digital solution, we are ready to help.
+        </p>
+    </div>
+
+</section>
+
+
+<section class="section services-section">
+
+    <div class="wrap">
+
+        <div class="center">
+            <p class="eyebrow">OUR APPROACH</p>
+            <h2>Technology made <em>practical.</em></h2>
+        </div>
+
+        <div class="info-grid">
+
+            <div class="info-panel">
+                <h3>Our commitment</h3>
+                <p class="muted">
+                    To deliver dependable technology services, communicate clearly and recommend practical solutions that address each client's needs.
+                </p>
+            </div>
+
+            <div class="info-panel">
+                <h3>Our promise</h3>
+                <p class="muted">
+                    To make technology easier to access, understand and use through reliable support and affordable service delivery.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section wrap center">
+
+    <p class="eyebrow">OUR SLOGAN</p>
+
+    <h2><em>Changing the World Through Tech.</em></h2>
+
+    <p class="muted" style="margin-top:15px;">
+        We believe technology can create opportunities, improve operations and connect people to new possibilities.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     SERVICES PAGE
+========================= -->
+
+<section class="section services-section" id="services">
+
+    <div class="wrap">
+
+        <div class="center">
+
+            <p class="eyebrow">WHAT WE DO</p>
+
+            <h2>Our <em>Services</em></h2>
+
+            <p class="muted">
+                Professional technology and digital solutions designed to help individuals and businesses work smarter, stay connected and grow.
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <!-- SERVICE 1 -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=85" alt="Network infrastructure" loading="lazy">
+                    <span>View Image ↗</span>
+                </div>
+
+                <div class="service-content">
+                    <h3>Network Installation & Configuration</h3>
+                    <p>Network setup, configuration and troubleshooting for reliable connectivity.</p>
+                    <a href="#contact" class="service-link">Request Service →</a>
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 2 -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=900&q=85" alt="Graphic design workspace" loading="lazy">
+                    <span>View Image ↗</span>
+                </div>
+
+                <div class="service-content">
+                    <h3>Graphics Design & Digital Branding</h3>
+                    <p>Creative graphics, visual identity and professional digital branding.</p>
+                    <a href="#contact" class="service-link">Request Service →</a>
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 3 -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=85" alt="IT technical support" loading="lazy">
+                    <span>View Image ↗</span>
+                </div>
+
+                <div class="service-content">
+                    <h3>IT Consultancy & Technical Support</h3>
+                    <p>Professional IT advice, troubleshooting and technical assistance.</p>
+                    <a href="#contact" class="service-link">Request Service →</a>
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 4 -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&q=85" alt="Computer training" loading="lazy">
+                    <span>View Image ↗</span>
+                </div>
+
+                <div class="service-content">
+                    <h3>Computer Training & Digital Skills</h3>
+                    <p>Computer lessons and digital skills development for all levels.</p>
+                    <a href="#contact" class="service-link">Request Service →</a>
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 5 -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&q=85" alt="Software development" loading="lazy">
+                    <span>View Image ↗</span>
+                </div>
+
+                <div class="service-content">
+                    <h3>Software Development</h3>
+                    <p>Modern websites, applications and custom software solutions.</p>
+                    <a href="#contact" class="service-link">Request Service →</a>
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 6 -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?w=900&q=85" alt="Security camera installation" loading="lazy">
+                    <span>View Image ↗</span>
+                </div>
+
+                <div class="service-content">
+                    <h3>Camera Installation</h3>
+                    <p>Security camera and CCTV installation to help protect your property.</p>
+                    <a href="#contact" class="service-link">Request Service →</a>
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 7 -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=85" alt="Computer hardware" loading="lazy">
+                    <span>View Image ↗</span>
+                </div>
+
+                <div class="service-content">
+                    <h3>Software Maintenance & Installation</h3>
+                    <p>Software installation, updates, system configuration and maintenance.</p>
+                    <a href="#contact" class="service-link">Request Service →</a>
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 8 -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=85" alt="Software testing team" loading="lazy">
+                    <span>View Image ↗</span>
+                </div>
+
+                <div class="service-content">
+                    <h3>Quality Assurance & Software Testing</h3>
+                    <p>Professional testing to identify defects and improve software quality.</p>
+                    <a href="#contact" class="service-link">Request Service →</a>
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 9 -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=85" alt="Travel services" loading="lazy">
+                    <span>View Image ↗</span>
+                </div>
+
+                <div class="service-content">
+                    <h3>Travel Documents Assistance</h3>
+                    <p>Administrative guidance and assistance with travel-document preparation.</p>
+                    <a href="#contact" class="service-link">Request Service →</a>
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 10 -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=85" alt="Online tutoring services" loading="lazy">
+                    <span>View Image ↗</span>
+                </div>
+
+                <div class="service-content">
+                    <h3>Tutor Account Creation</h3>
+                    <p>Assistance with tutor registration and account setup on supported platforms.</p>
+                    <a href="#contact" class="service-link">Request Service →</a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     IMAGE PREVIEW
+========================= -->
+
+<div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Service image preview">
+
+    <button class="close-modal" aria-label="Close image preview">&times;</button>
+
+    <img id="modalImage" src="" alt="Expanded service preview">
+
+    <p id="modalCaption"></p>
+
+</div>
+
+
+<!-- =========================
+     WHY CHOOSE US PAGE
+========================= -->
+
+<section class="section wrap why-grid" id="why-us">
+
+    <div>
+
+        <p class="eyebrow">THE ML TECH GLOBAL DIFFERENCE</p>
+
+        <h2>Why choose <em>us?</em></h2>
+
+        <p class="muted" style="margin:20px 0;">
+            Our focus is on clear communication, dependable service and solutions that deliver real value. We listen to clients and help them choose practical next steps.
+        </p>
+
+        <a class="textlink" href="#contact">Let's discuss your project →</a>
+
+    </div>
+
+
+    <div class="benefits">
+
+        <div>
+            <b>01</b>
+            <section>
+                <h3>Reliable service</h3>
+                <p>We take your technology needs seriously and work towards dependable results.</p>
+            </section>
+        </div>
+
+        <div>
+            <b>02</b>
+            <section>
+                <h3>Affordable solutions</h3>
+                <p>Practical options designed to offer value for your budget.</p>
+            </section>
+        </div>
+
+        <div>
+            <b>03</b>
+            <section>
+                <h3>Broad technical expertise</h3>
+                <p>Support across IT, networking, software, security and digital services.</p>
+            </section>
+        </div>
+
+        <div>
+            <b>04</b>
+            <section>
+                <h3>People-first support</h3>
+                <p>We listen, explain clearly and help you choose the right next step.</p>
+            </section>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section services-section">
+
+    <div class="wrap center">
+
+        <p class="eyebrow">OUR STANDARD</p>
+
+        <h2>Professional support. <em>Practical results.</em></h2>
+
+        <p class="muted">
+            From a single technical issue to a larger digital project, we aim to provide clear guidance and dependable assistance.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT PAGE
+========================= -->
+
+<section class="section wrap contact-grid" id="contact">
+
+    <div>
+
+        <p class="eyebrow">CONTACT ML TECH GLOBAL</p>
+
+        <h2>We're ready to <em>help.</em></h2>
+
+        <p class="lead" style="margin-top:20px;">
+            Let's talk about your technology needs.
+        </p>
+
+        <p class="muted">
+            Contact us for enquiries, quotations, technical support or to discuss your next project.
+        </p>
+
+
+        <div class="details">
+
+            <a href="tel:+237680532192">
+                <b>☎</b>
+                <span>
+                    <small>Phone / WhatsApp</small>
+                    +237 680 532 192
+                </span>
+            </a>
+
+            <a href="tel:+237678239018">
+                <b>☎</b>
+                <span>
+                    <small>Phone / WhatsApp</small>
+                    +237 678 239 018
+                </span>
+            </a>
+
+            <a href="mailto:mugwahspencer@gmail.com">
+                <b>✉</b>
+                <span>
+                    <small>Email</small>
+                    mugwahspencer@gmail.com
+                </span>
+            </a>
+
+            <a href="mailto:langjimugwah@gmail.com">
+                <b>✉</b>
+                <span>
+                    <small>Email</small>
+                    langjimugwah@gmail.com
+                </span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT FORM -->
+
+    <form id="contactForm">
+
+        <h3>Send an enquiry</h3>
+
+        <label for="name">Your name</label>
+        <input
+            id="name"
+            type="text"
+            required
+            placeholder="Enter your name"
+        >
+
+        <label for="email">Email address</label>
+        <input
+            id="email"
+            type="email"
+            required
+            placeholder="you@example.com"
+        >
+
+        <label for="service">Service required</label>
+
+        <select id="service" required>
+
+            <option value="">Choose a service</option>
+
+            <option>Network installation and configuration</option>
+
+            <option>Graphics design and digital branding</option>
+
+            <option>IT consultancy and technical support</option>
+
+            <option>Computer training and digital skills</option>
+
+            <option>Software development</option>
+
+            <option>Tutor account creation</option>
+
+            <option>Camera installation</option>
+
+            <option>Software maintenance and installation</option>
+
+            <option>Quality assurance / software testing</option>
+
+            <option>Travel documents assistance</option>
+
+            <option>Other enquiry</option>
+
+        </select>
+
+
+        <label for="message">How can we help?</label>
+
+        <textarea
+            id="message"
+            rows="5"
+            required
+            placeholder="Tell us briefly what you need..."
+        ></textarea>
+
+
+        <button class="btn gold submit" type="submit">
+            Send via WhatsApp
+        </button>
+
+        <p class="note">
+            Your message opens in WhatsApp for you to review and send.
+        </p>
+
+    </form>
+
+</section>
+
+
+<!-- =========================
+     FINAL CALL TO ACTION
+========================= -->
+
+<section class="callout">
+
+    <div class="wrap callinner">
+
+        <div>
+            <p class="eyebrow">ML TECH GLOBAL</p>
+            <h2>Changing the World Through Tech.</h2>
+        </div>
+
+        <a class="btn gold" href="#home">Back to Home</a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="wrap foot">
+
+        <a class="brand" href="#home">
+            <img src="assets/ml-tech-global-logo.jpeg" alt="ML Tech Global logo">
+        </a>
+
+        <p>
+            Reliable tech and security solutions to protect your business and drive growth.
+        </p>
+
+        <a href="#top">Back to top ↑</a>
+
+    </div>
+
+    <div class="wrap copyright">
+        © <span id="year"></span> ML Tech Global. All rights reserved.
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+// MOBILE NAVIGATION
+
+const toggle = document.querySelector('.menu');
+const links = document.querySelector('.links');
+
+if (toggle && links) {
+
+    toggle.addEventListener('click', () => {
+
+        const open = links.classList.toggle('open');
+
+        toggle.setAttribute('aria-expanded', String(open));
+
+    });
+
+    document.querySelectorAll('.links a').forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            links.classList.remove('open');
+
+            toggle.setAttribute('aria-expanded', 'false');
+
+        });
+
+    });
+
+}
+
+
+// ACTIVE NAVIGATION LINK
+
+const navLinks = document.querySelectorAll('.links a');
+
+const sections = document.querySelectorAll('main section[id]');
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            navLinks.forEach(link => {
+
+                link.classList.toggle(
+                    'active',
+                    link.getAttribute('href') === '#' + entry.target.id
+                );
+
+            });
+
+        }
+
+    });
+
+}, {
+    rootMargin: '-30% 0px -60% 0px'
+});
+
+sections.forEach(section => observer.observe(section));
+
+
+// AUTOMATIC COPYRIGHT YEAR
+
+const year = document.getElementById('year');
+
+if (year) {
+
+    year.textContent = new Date().getFullYear();
+
+}
+
+
+// INTERACTIVE SERVICE IMAGE GALLERY
+
+const serviceImages = document.querySelectorAll('.service-image');
+
+const imageModal = document.getElementById('imageModal');
+
+const modalImage = document.getElementById('modalImage');
+
+const modalCaption = document.getElementById('modalCaption');
+
+const closeModal = document.querySelector('.close-modal');
+
+
+if (imageModal && modalImage && modalCaption && closeModal) {
+
+    serviceImages.forEach(item => {
+
+        item.addEventListener('click', () => {
+
+            const image = item.querySelector('img');
+
+            modalImage.src = image.src;
+
+            modalCaption.textContent = image.alt;
+
+            imageModal.classList.add('active');
+
+            document.body.style.overflow = 'hidden';
+
+            closeModal.focus();
+
+        });
+
+    });
+
+
+    function closeImagePreview() {
+
+        imageModal.classList.remove('active');
+
+        document.body.style.overflow = '';
+
+        modalImage.src = '';
+
+    }
+
+
+    closeModal.addEventListener('click', closeImagePreview);
+
+
+    imageModal.addEventListener('click', event => {
+
+        if (event.target === imageModal) {
+
+            closeImagePreview();
+
+        }
+
+    });
+
+
+    document.addEventListener('keydown', event => {
+
+        if (event.key === 'Escape') {
+
+            closeImagePreview();
+
+        }
+
+    });
+
+}
+
+
+// WHATSAPP CONTACT FORM
+
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+
+    contactForm.addEventListener('submit', event => {
+
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+
+        const email = document.getElementById('email').value.trim();
+
+        const service = document.getElementById('service').value;
+
+        const message = document.getElementById('message').value.trim();
+
+
+        const text = `Hello ML Tech Global,
+
+My name is ${name}.
+Email: ${email}
+Service required: ${service}
+
+${message}`;
+
+
+        const whatsappNumber = '237680532192';
+
+        const whatsappURL =
+            'https://wa.me/' +
+            whatsappNumber +
+            '?text=' +
+            encodeURIComponent(text);
+
+
+        window.open(
+            whatsappURL,
+            '_blank',
+            'noopener,noreferrer'
+        );
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
